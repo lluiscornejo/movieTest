@@ -1,0 +1,73 @@
+@import "styles/colors.pcss";
+@import "styles/media-queries.pcss";
+
+.root {
+  color: var(--black-medium);
+  margin-top: 0px;
+  margin-bottom: 20px;
+
+  & .p{
+    color: blue;
+  }
+
+  & .movie{
+    height: calc(100% - 20px);
+    padding: 20px;
+    text-align: center;
+    background: var(--gray-light);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+      -webkit-transform: scale(1.02);
+    }
+  }
+  & a {
+    text-decoration: none;
+    color: var(--black-medium);
+  }
+  & .poster {
+    max-width: 100%;
+  }
+  & .description{
+    padding: 20px;
+  }
+  & h3 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+
+  }
+  & p {
+    margin-bottom: 10px;
+  }
+
+  @media (--small) {
+    background-color: red;
+  }
+  & h4{
+    padding: 5px 0;
+    cursor: pointer;
+    color: var(--green);
+    display: inline-block;
+    &:hover{
+      color: color(var(--green) lightness(45%));
+    }
+  }
+}
+.posterContainer{
+  min-height: 345px;
+}
+.guide{
+  background: var(--gray-light);
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.icon {
+  padding-right: 10px;
+}
+.noResults{
+  background: var(--gray-light);
+  padding: 20px;
+}

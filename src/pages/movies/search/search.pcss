@@ -1,0 +1,32 @@
+@import "styles/colors.pcss";
+@import "styles/media-queries.pcss";
+
+
+.root {
+  background: var(--gray-light);
+  padding: 10px 0;
+}
+
+.input {
+  display: flex;
+  flex-flow: row;
+  & input{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    color: var(--green);
+    border: 1px solid var(--green);
+    outline: none;
+  }
+}
+
+.inputContainer,
+.btnContainer {
+  //float: left;
+  //flex: 1 100%;
+}
+.inputContainer{
+  width: calc(100% - 100px);
+  flex: 3;
+}
+

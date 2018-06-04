@@ -1,0 +1,71 @@
+@import "styles/colors.pcss";
+@import "styles/media-queries.pcss";
+
+.root {
+  color: var(--black-medium);
+  margin-bottom: 20px;
+}
+
+.description {
+  background: var(--gray-light);
+  height: 100%;
+  padding: 20px 30px;
+  & h1{
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: bold;
+    padding: 10px 0;
+  }
+  & h3{
+    padding: 10px 0;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+  }
+  & p{
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+  & em{
+    font-style: italic;
+  }
+  & hr{
+    border: 1px solid var(--white);
+    margin-bottom: 20px;
+  }
+  & a{
+    color: var(--green);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    &:hover{
+      color: color(var(--green) lightness(45%));
+    }
+  }
+}
+.poster{
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.linkIcon{
+  padding: 0 20px;
+  font-size: 24px;
+  position: relative;
+  top: -4px;
+}
+.postHeader{
+  background: var(--gray-light);
+  padding: 20px 0;
+  margin-bottom: 20px;
+  & a{
+    color: var(--green);
+    text-decoration: none;
+  }
+}
+.icon{
+  padding-right:10px;
+  position: relative;
+  top: -2px;
+}
+

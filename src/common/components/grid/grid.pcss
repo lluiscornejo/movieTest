@@ -1,0 +1,82 @@
+@import "styles/colors.pcss";
+@import "styles/media-queries.pcss";
+
+:root {
+  --gutter: 15;
+  --gutterSmall: 10;
+  --maxColNumber: 12;
+  --containerMaxWith: 1200px;
+}
+
+@define-mixin gutter {
+  box-sizing: border-box;
+  padding-left: var(--gutter)px;
+  padding-right: var(--gutter)px;
+
+  @media (--small) {
+    padding-left: var(--gutterSmall)px;
+    padding-right: var(--gutterSmall)px;
+  }
+}
+
+@define-mixin negativeGutter {
+  margin-right: calc(-1 * var(--gutter))px;
+  margin-left: calc(-1 * var(--gutter))px;
+
+  @media (--small) {
+    margin-left: calc(-1 * var(--gutterSmall))px;
+    margin-right: calc(-1 * var(--gutterSmall))px;
+  }
+}
+
+@define-mixin colStyle $breakpoint {
+  @each $colNumber in (1,2,3,4,5,6,7,8,9,10,11,12) {
+    .$(breakpoint)$(colNumber) {
+      flex: 0 0 calc(100% * $(colNumber) / var(--maxColNumber));
+    }
+    .$(breakpoint)-offset$(colNumber) {
+      margin-left: calc(100% * $(colNumber) / var(--maxColNumber));
+    }
+  }
+}
+
+.container {
+  @mixin gutter;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  &.not-fluid {
+    max-width: var(--containerMaxWith);
+  }
+}
+
+.row {
+  @mixin negativeGutter;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  @mixin gutter;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+}
+
+@media (--small) {
+  @mixin colStyle small;
+}
+
+@media (--medium) {
+  @mixin colStyle medium;
+}
+
+@media (--large) {
+  @mixin colStyle large;
+}
+
+@media (--xlarge) {
+  @mixin colStyle xlarge;
+}
+

@@ -1,0 +1,23 @@
+@import "styles/colors.pcss";
+@import "styles/media-queries.pcss";
+
+.root {
+  background: var(--green);
+  padding: 10px 0;
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: bold;
+  & img {
+    max-width: 60px;
+  }
+  & a {
+    text-decoration: none;
+  }
+  & h1 span {
+    position: relative;
+    top: -22px;
+    left: 10px;
+    color: var(--white);
+  }
+
+}
